@@ -45,6 +45,9 @@ $wall-thickness-half: calc($wall-thickness/2);
     &.has-border {
         border-top: solid 1px $grey;
         border-left: solid 1px $grey;
+        @media print {
+            border: none;
+        }
     }
 
     &:hover {
@@ -61,6 +64,7 @@ $wall-thickness-half: calc($wall-thickness/2);
         &.active {
             background-color: $black;
             opacity: 1;
+            -webkit-print-color-adjust: exact; // show background color when printing
             &:hover {
                 background-color: $red;
                 opacity: 1;
