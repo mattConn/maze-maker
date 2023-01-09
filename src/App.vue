@@ -41,6 +41,10 @@ export default {
       this.rows = [];
       this.initMaze();
     },
+    // open print dialog
+    printMaze(){
+      print();
+    },
   },
 }
 </script>
@@ -49,6 +53,7 @@ export default {
   <h1 class="app-title">Maze Maker v1.0</h1>
   <!-- toggle grid visibility -->
   <div class="maze-controls">
+    <button @click="printMaze">Print</button>
     <button @click="showGrid = !showGrid">Toggle grid</button>
     <button class="is-danger" @click="eraseMaze">Erase maze</button>
   </div>
@@ -97,6 +102,7 @@ export default {
     // for destructive/permanent mutating actions 
     &.is-danger {
       background-color: #ff7777;
+      margin: 0 1em;
     }
   }
 }
